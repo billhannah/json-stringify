@@ -1,0 +1,15 @@
+{
+  "name": "json-stringify",
+  "version": "1.0.0",
+  "description": "Command line utility to escape JSON files",
+  "main": "bin/index.js",
+  "bin": {
+    "json-stringify": "./bin/index.js"
+  },
+  "author": "Bill Hannah",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "yargs": "^17.0.1"
+  }
+}
