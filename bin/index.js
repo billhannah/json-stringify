@@ -21,11 +21,11 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
 const fs = require('fs');
 
 const contents = fs.readFileSync(argv.file)
-const json = JSON.parse(contents)
+const json = JSON.parse(contents.toString())
 
 const jsonString = JSON.stringify(json);
 
-const escapedJson = `"${jsonString.replaceAll('"', '\\"')}"`;
+const escapedJson = `"${jsonString.replace(/\"/g, '\\"')}"`;
 
 if(argv.out) {
 	fs.writeFileSync(argv.out, escapedJson)
