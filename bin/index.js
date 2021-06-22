@@ -25,10 +25,14 @@ const json = JSON.parse(contents.toString())
 
 const jsonString = JSON.stringify(json);
 
-const escapedJson = `"${jsonString.replace(/\"/g, '\\"')}"`;
+const escapedJson = jsonString
+	.replace(/\\/g, '\\\\')
+	.replace(/"/g, '\\"');
+
+const output = `"${escapedJson}"`;
 
 if(argv.out) {
-	fs.writeFileSync(argv.out, escapedJson)
+	fs.writeFileSync(argv.out, output)
 } else {
-	console.log(escapedJson);
+	console.log(output);
 }
