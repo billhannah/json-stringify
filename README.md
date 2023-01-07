@@ -2,7 +2,7 @@
 
 Simple command-line utility for helping with posting JSON as a string.
 
-Reads the input of a JSON file and escapes the JSON object in the contents.
+Reads the input of a JSON file and HTML escapes the JSON object in the contents.
 
 The result will be written to the console (default) or to a file (`-o`, `--out`)
 
